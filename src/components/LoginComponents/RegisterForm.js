@@ -19,13 +19,13 @@ function RegisterForm() {
         event.preventDefault();
 
         axios.post(
-            SERVER_URL + "/api/auth/formSignup",data, {
+            SERVER_URL + "/authentication-service/api/auth/formSignup",data, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
             .then((response) => {
-                window.localStorage.setItem("auth_token", response.data.token)
+
                 console.log(response); // handle the response as needed
                 setisRegistered(true);
         })
